@@ -13,6 +13,7 @@ public class LoginTest extends BaseTest{
         MainPage mainPage = loginPage.loginToApp(username,password);
         Assert.assertTrue(mainPage.isOpen());
     }
+
     @Test
     public void loginToApp_incorrectCredentials_redFrame() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
@@ -20,46 +21,5 @@ public class LoginTest extends BaseTest{
         loginPage.loginToApp(username,"wrongPassword");
         Assert.assertTrue(loginPage.isRedFrame());
     }
-    @Test
-    public void loginToApp_correctCredentials_loggedToApp1() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        MainPage mainPage = loginPage.loginToApp(username,password);
-        Assert.assertTrue(mainPage.isOpen());
-    }
-    @Test
-    public void loginToApp_incorrectCredentials_redFrame1() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        loginPage.loginToApp(username,"wrongPassword");
-        Assert.assertTrue(loginPage.isRedFrame());
-    }
-    @Test
-    public void loginToApp_correctCredentials_loggedToApp2() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        MainPage mainPage = loginPage.loginToApp(username,password);
-        Assert.assertTrue(mainPage.isOpen());
-    }
-    @Test
-    public void loginToApp_incorrectCredentials_redFrame2() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        loginPage.loginToApp(username,"wrongPassword");
-        Assert.assertTrue(loginPage.isRedFrame());
-    }
-    @Test
-    public void loginToApp_correctCredentials_loggedToApp3() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        MainPage mainPage = loginPage.loginToApp(username,password);
-        Assert.assertTrue(mainPage.isOpen());
-    }
-    @Test
-    public void loginToApp_incorrectCredentials_redFrame3() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(url);
-        loginPage.loginToApp(username,"wrongPassword");
-        Assert.assertTrue(loginPage.isRedFrame());
-    }
+
 }

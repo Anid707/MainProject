@@ -10,7 +10,7 @@ public class RunTest {
     @Test
     public void openPage(){
             try (Playwright playwright = Playwright.create()) {
-                Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions() // or firefox, webkit
+                Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
                         .setHeadless(false)
                         .setSlowMo(10000));
                 Page page = browser.newPage();

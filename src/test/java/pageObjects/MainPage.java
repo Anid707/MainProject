@@ -25,7 +25,7 @@ public class MainPage extends BasePage {
 
     private void clickPlusButton(){
         logger.debug("Going to click plus button");
-        By plusLocator = By.className("fa-plus-circle");
+        By plusLocator = By.className("circle");
         int i=0;
         for (; i< 25;i++){
             try {

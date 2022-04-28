@@ -27,7 +27,7 @@ public class HybridTest extends BaseTest{
 
         PlaylistRequest body = new PlaylistRequest(playlistName);
         Response response = given()
-                .baseUri("https://bbb.testpro.io/")
+                .baseUri("url")
                 .basePath("api/playlist")
                 .header("accept","application/json")
                 .header("Content-Type","application/json")
@@ -43,14 +43,16 @@ public class HybridTest extends BaseTest{
         PlaylistResponse playlistResponse = json.getObject("$",PlaylistResponse.class);
         playlistId = playlistResponse.getId();
     }
+
     @AfterMethod
     public void deletePlayList(){
         given()
-                .baseUri("https://bbb.testpro.io/api/playlist/"+playlistId)
+                .baseUri("url"+playlistId)
                 .header("Authorization","Bearer "+token)
                 .when()
                 .delete();
     }
+
     @Test
     public void hybrid_renamePlaylist(){
         MainPage mainPage = login();

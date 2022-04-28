@@ -8,7 +8,7 @@ import java.util.List;
 public class DbAdapter {
 
         private static final String JDBC_DRIVER = "org.mariadb.jdbc.Driver";
-        private static final String DB_URL = "jdbc:mariadb://104.237.13.60/dbkoel";
+        private static final String DB_URL = "jdbc:mariadb://104.237.13.60/databaseName";
         private static final String USER = "dbuser01";
         private static final String PASS = "pa$$01";
         private static Connection conn = null;

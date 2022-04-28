@@ -10,7 +10,7 @@ public class Token {
     public static String get(String username, String password){
         Credentials creds = new Credentials(username,password);
         Response response = given()
-                .baseUri("https://bbb.testpro.io/")
+                .baseUri("url")
                 .basePath("api/me")
                 .header("accept","application/json")
                 .header("Content-Type","application/json")

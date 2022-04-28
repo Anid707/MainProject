@@ -16,20 +16,20 @@ import pageObjects.MainPage;
 
 
 public class BaseTest {
-
-
     protected Faker faker;
     protected String username;
     protected String password;
     protected String token;
     protected String url;
     protected WebDriver driver;
+
     @Parameters({"username", "password"})
     @BeforeClass
     public void runOnStart(String username, String password){
         token = Token.get(username, password);
         System.out.println(token);
     }
+
     @Parameters({"url", "username", "password", "browser"})
     @BeforeMethod
     public void startUp(String url,String username, String password, String browser) {

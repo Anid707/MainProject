@@ -11,8 +11,6 @@ import java.io.IOException;
 public class Screenshot {
     public static void take(WebDriver driver, String fileName){
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-//        double xx = 5.9;
-//        int y = (int)xx;
         File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(file, new File("./screenshot/"+fileName+".png"));

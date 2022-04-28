@@ -3,9 +3,9 @@
     <listeners>
         <listener class-name="listeners.Listeners" />
     </listeners>
-    <parameter name="url" value="https://demo.koel.dev"/>
-    <parameter name="username" value="demo@koel.dev"/>
-    <parameter name="password" value="demo"/>
+    <parameter name="url" value="https://"/>
+    <parameter name="username" value="email@email.com"/>
+    <parameter name="password" value="password"/>
     <parameter name="browser" value="firefox"/>
     <test name="Selenium Tests">
         <classes>
@@ -13,24 +13,12 @@
                 <methods>
                     <include name="loginToApp_correctCredentials_loggedToApp"/>
                     <include name="loginToApp_incorrectCredentials_redFrame"/>
-                    <include name="loginToApp_correctCredentials_loggedToApp1"/>
-                    <include name="loginToApp_incorrectCredentials_redFrame1"/>
-                    <include name="loginToApp_correctCredentials_loggedToApp2"/>
-                    <include name="loginToApp_incorrectCredentials_redFrame2"/>
-                    <include name="loginToApp_correctCredentials_loggedToApp3"/>
-                    <include name="loginToApp_incorrectCredentials_redFrame3"/>
                 </methods>
             </class>
             <class name="pageObjectTests.LoginTestFactory">
                 <methods>
                     <include name="loginToAppFactory_correctCredentials_loggedToApp"/>
                     <include name="loginToAppFactory_incorrectCredentials_redFrame"/>
-                    <include name="loginToAppFactory_correctCredentials_loggedToApp1"/>
-                    <include name="loginToAppFactory_incorrectCredentials_redFrame1"/>
-                    <include name="loginToAppFactory_correctCredentials_loggedToApp2"/>
-                    <include name="loginToAppFactory_incorrectCredentials_redFrame2"/>
-                    <include name="loginToAppFactory_correctCredentials_loggedToApp3"/>
-                    <include name="loginToAppFactory_incorrectCredentials_redFrame3"/>
                 </methods>
             </class>
             <class name="pageObjectTests.PlaylistTest">
@@ -38,12 +26,6 @@
                     <include name="flakyTest"/>
                     <include name="playlist_createPlaylist_playlistCreated"/>
                     <include name="playlist_renamePlaylist_playlistRenamed"/>
-                    <include name="playlist_createPlaylist_playlistCreated1"/>
-                    <include name="playlist_renamePlaylist_playlistRenamed1"/>
-                    <include name="playlist_createPlaylist_playlistCreated2"/>
-                    <include name="playlist_renamePlaylist_playlistRenamed2"/>
-                    <include name="playlist_createPlaylist_playlistCreated3"/>
-                    <exclude name="playlist_renamePlaylist_playlistRenamed3"/>
                 </methods>
             </class>
         </classes>

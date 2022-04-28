@@ -1,11 +1,9 @@
-package apiKoel;
+package apiProject;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.github.javafaker.Faker;
 import helper.Token;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import models.Credentials;
 import models.PlaylistRequest;
 import models.PlaylistResponse;
 import org.testng.Assert;
@@ -21,9 +19,10 @@ public class PlaylistApi {
     private Faker faker;
     private String playlistName;
     private int playlistId;
+
     @BeforeClass
     public void runOnce(){
-        token = Token.get("koeluser06@testpro.io","te$t$tudent");
+        token = Token.get("email@email.com","password");
         faker = new Faker();
     }
     @BeforeMethod
@@ -32,7 +31,7 @@ public class PlaylistApi {
         System.out.println(playlistName);
         PlaylistRequest body = new PlaylistRequest(playlistName);
         Response response = given()
-                .baseUri("https://bbb.testpro.io/")
+                .baseUri("url")
                 .basePath("api/playlist")
                 .header("accept","application/json")
                 .header("Content-Type","application/json")
@@ -52,7 +51,7 @@ public class PlaylistApi {
     @AfterMethod
     public void deletePlayList(){
         given()
-                .baseUri("https://bbb.testpro.io/api/playlist/"+playlistId)
+                .baseUri("url"+playlistId)
                 .header("Authorization","Bearer "+token)
                 .when()
                 .delete();
@@ -62,7 +61,7 @@ public class PlaylistApi {
         String newName = faker.rickAndMorty().character();
         PlaylistRequest body = new PlaylistRequest(newName);
         Response response = given()
-                .baseUri("https://bbb.testpro.io/")
+                .baseUri("url")
                 .basePath("api/playlist/"+playlistId)
                 .header("accept","application/json")
                 .header("Content-Type","application/json")
@@ -81,7 +80,7 @@ public class PlaylistApi {
     @Test
     public void getPlaylists(){
         Response response = given()
-                .baseUri("https://bbb.testpro.io/")
+                .baseUri("url")
                 .basePath("api/playlist/")
                 .header("accept","application/json")
                 .header("Authorization","Bearer "+token)
@@ -105,7 +104,7 @@ public class PlaylistApi {
 
         for (PlaylistResponse pl :playlists){
             given()
-                    .baseUri("https://bbb.testpro.io/api/playlist/"+pl.getId())
+                    .baseUri("url"+pl.getId())
                     .header("Authorization","Bearer "+token)
                     .when()
                     .delete();
